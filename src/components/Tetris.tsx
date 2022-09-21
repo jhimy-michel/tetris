@@ -47,7 +47,7 @@ function Tetris() {
     }
   };
   return (
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={(e) => move(e)}>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={(e: { keyCode: number; }) => move(e)}>
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
