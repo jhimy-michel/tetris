@@ -1,27 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import { createStage } from '../gameHelpers';
-import { PlayerType } from './usePlayer';
+import { createStage } from "../gameHelpers";
+import { PlayerType } from "./usePlayer";
 
-export const useStage = (player: PlayerType, resetPlayer?: undefined): [any[][], React.Dispatch<React.SetStateAction<any[][]>>] => {
+export const useStage = (
+  player: PlayerType,
+  resetPlayer: any
+): [any[][], React.Dispatch<React.SetStateAction<any[][]>>] => {
   const [stage, setStage] = useState(createStage());
 
   useEffect(() => {
     const updateStage = (prevStage: any[]) => {
       // first flush the stage
-      const newStage = prevStage.map((row) => row.map((cell: string[]) => (cell[1] === 'clear' ? [0, 'clear'] : cell)));
+      const newStage = prevStage.map((row) => row.map((cell: string[]) => (cell[1] === "clear" ? [0, "clear"] : cell)));
       // draw the tetromino
       player.tetramino.forEach((row, y) => {
         row.forEach((value, x) => {
           if (value !== 0) {
-            newStage[y + player.pos.y][x + player.pos.x] = [value, `${player.collided ? 'merged' : 'clear'}`];
+            newStage[y + player.pos.y][x + player.pos.x] = [value, `${player.collided ? "merged" : "clear"}`];
           }
         });
       });
+
+      // then check if we collided
+      if (player.collided) {
+        resetPlayer();
+      }
       return newStage;
     };
     setStage((prev) => updateStage(prev));
-  }, [player]);
+  }, [player, resetPlayer]);
 
   return [stage, setStage];
 };
