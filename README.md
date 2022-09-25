@@ -13,7 +13,7 @@ This project is hosted in firebase, and you can enjoy a live version by clicking
 
 <img src="./readme/game.gif" alt="tetris">
 
-## Setup
+## Setup ⚒️
 
 1. Clone this repo.
 2. Install dependencies (yarn install).
@@ -35,3 +35,11 @@ For building the app (before deployment):
 ```bash 
 yarn build
 ```
+
+## Deploy a new version of the app ☁️
+
+For deploying a new version of the application proceed as follow:
+
+1. Navigate to the scripts folder.
+2. Make sure to have installed [firebase-cli](https://firebase.google.com/docs/cli).
+3. execute in the terminal the **`deploy.sh`** script.
