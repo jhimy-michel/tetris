@@ -22,3 +22,6 @@ yarn build
 yarn eject
 ```
 
+
+Icon used for the app: 
+<a href="https://www.flaticon.com/free-icons/shapes" title="shapes icons">Shapes icons created by Smashicons - Flaticon</a>
