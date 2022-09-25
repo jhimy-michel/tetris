@@ -13,7 +13,13 @@ This project is hosted in firebase, and you can enjoy a live version by clicking
 
 <img src="./readme/game.gif" alt="tetris">
 
-## Available npm scripts
+## Setup
+
+1. Clone this repo.
+2. Install dependencies (yarn install).
+3. run: yarn start
+
+### Available npm scripts
 
 For starting development server:
 ```bash 
@@ -25,7 +31,7 @@ For running tests:
 yarn test
 ```
 
-For building the app:
+For building the app (before deployment):
 ```bash 
 yarn build
 ```
