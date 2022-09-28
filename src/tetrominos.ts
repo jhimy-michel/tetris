@@ -1,5 +1,5 @@
 /**
- * 
+ * All the geometric shapes for the tetris game
  */
 type TetriminoType = {
   [key: number | string]: {
@@ -68,6 +68,10 @@ export const TRETOMINOS: TetriminoType = {
   }
 };
 
+/**
+ * Randomly select a tetromino
+ * @returns 
+ */
 export const randomTetromino = () => {
   const tetrominos = 'IJLOSTZ';
   const randTetromino = tetrominos[Math.floor(Math.random() * tetrominos.length)];

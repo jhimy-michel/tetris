@@ -13,7 +13,7 @@ export const useStage = (
   useEffect(() => {
     setRowsCleared(0);
 
-    const sweepRows = (newStage: any) =>
+    const sweepRows = (newStage: any[][]) =>
       newStage.reduce((acc: any, row: any) => {
         if (row.findIndex((cell: any) => cell[0] === 0) === -1) {
           setRowsCleared((prev) => prev + 1);
@@ -27,6 +27,7 @@ export const useStage = (
     const updateStage = (prevStage: any[]) => {
       // first flush the stages
       const newStage = prevStage.map((row) => row.map((cell: string[]) => (cell[1] === "clear" ? [0, "clear"] : cell)));
+      
       // draw the tetromino
       player.tetramino.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -41,8 +42,10 @@ export const useStage = (
         resetPlayer();
         return sweepRows(newStage);
       }
+      
       return newStage;
     };
+
     setStage((prev) => updateStage(prev));
   }, [player, resetPlayer]);
 

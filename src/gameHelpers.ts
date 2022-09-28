@@ -1,4 +1,3 @@
-import { moveMessagePortToContext } from "worker_threads";
 import { PlayerType } from "./hooks/usePlayer";
 
 export const STAGE_WIDTH = 12;
@@ -10,6 +9,13 @@ export const STAGE_HEIGHT = 20;
  */
 export const createStage = () => Array.from(Array(STAGE_HEIGHT), () => new Array(STAGE_WIDTH).fill([0, "clear"]));
 
+/**
+ * Check if the tetromino collided with something
+ * @param player 
+ * @param stage 
+ * @param param2 
+ * @returns 
+ */
 export const checkCollision = (player: PlayerType, stage: any, { x: moveX, y: moveY }: any) => {
   // Using for loops to be able to return (and break). Not possible with forEach
   for (let y = 0; y < player.tetramino.length; y += 1) {

@@ -13,7 +13,7 @@ import { useGameStatus } from "../hooks/useGameStatus";
 
 function Tetris() {
   const [dropTime, setDropTime] = useState<number | null>(null);
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState<boolean>(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -22,7 +22,7 @@ function Tetris() {
 
   const movePlayer = (dir: number) => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
-      updatePlayerPos({ x: dir, y: 0 });
+      updatePlayerPos({ x: dir, y: 0, collided: false });
     }
   };
 
@@ -73,7 +73,6 @@ function Tetris() {
   };
 
   const move = ({ keyCode }: { keyCode: number }) => {
-    console.log(keyCode);
     if (!gameOver) {
       if (keyCode === 37) {
         movePlayer(-1);
