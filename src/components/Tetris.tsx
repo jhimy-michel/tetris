@@ -11,6 +11,11 @@ import { useInterval } from "../hooks/useInterval";
 import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
 import { useGameStatus } from "../hooks/useGameStatus";
 
+/**
+ * Tetris main component that renders the
+ * complete scenario
+ * @returns 
+ */
 function Tetris() {
   const [dropTime, setDropTime] = useState<number | null>(null);
   const [gameOver, setGameOver] = useState<boolean>(false);
