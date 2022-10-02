@@ -12,7 +12,7 @@ import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
 import { useGameStatus } from "../hooks/useGameStatus";
 
 /**
- * Tetris main component that renders the
+ * Main component that renders the
  * complete scenario
  * @returns 
  */
