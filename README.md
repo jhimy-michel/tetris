@@ -57,3 +57,5 @@ For deploying a new version of the application proceed as follow:
 1. Navigate to the scripts folder.
 2. Make sure to have installed [firebase-cli](https://firebase.google.com/docs/cli).
 3. execute in the terminal the **`deploy.sh`** script.
+
+<img src="./readme/deploy.png" alt="deploy">
