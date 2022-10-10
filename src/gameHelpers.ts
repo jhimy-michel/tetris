@@ -11,13 +11,17 @@ export const createStage = () => Array.from(Array(STAGE_HEIGHT), () => new Array
 
 /**
  * Check if the tetromino collided with something
- * @param player 
- * @param stage 
- * @param param2 
- * @returns 
+ * @param player
+ * @param stage
+ * @param param2
+ * @returns
  */
-export const checkCollision = (player: PlayerType, stage: any, { x: moveX, y: moveY }: any) => {
-  // Using for loops to be able to return (and break). Not possible with forEach
+export const checkCollision = (player: PlayerType, stage: any[][], { x: moveX, y: moveY }: any) => {
+  console.log("player: ", player);
+  console.log("stage: ", JSON.stringify(stage));
+  console.log("movex: ", moveX);
+  console.log("moveY: ", moveY);
+  // Using for loops to be able to return (and break).
   for (let y = 0; y < player.tetramino.length; y += 1) {
     for (let x = 0; x < player.tetramino[y].length; x += 1) {
       // 1. Check that we're on an actual Tetromino cell
