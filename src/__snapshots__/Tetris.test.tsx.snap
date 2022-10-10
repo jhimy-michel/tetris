@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Tetrix main component it should render the game 1`] = `
+exports[`Testing Tetrix main component should match snapshot 1`] = `
 <div>
   <div
     class="sc-eCYdqJ kjyEbZ"
