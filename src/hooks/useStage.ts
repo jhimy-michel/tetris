@@ -6,7 +6,7 @@ import { PlayerType } from "./usePlayer";
 export const useStage = (
   player: PlayerType,
   resetPlayer: any
-): [any[][], React.Dispatch<React.SetStateAction<any[][]>>, number] => {
+): [[number, string][][], React.Dispatch<React.SetStateAction<[number, string][][]>>, number] => {
   const [stage, setStage] = useState(createStage());
   const [rowsCleared, setRowsCleared] = useState(0);
 
