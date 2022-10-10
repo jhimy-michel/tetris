@@ -45,7 +45,6 @@ export function usePlayer(): [
     const clonedPlayer = JSON.parse(JSON.stringify(player));
 
     clonedPlayer.tetramino = rotate(clonedPlayer.tetramino, direction);
-    console.log(clonedPlayer);
 
     const pos = clonedPlayer.pos.x;
     let offSet = 1;

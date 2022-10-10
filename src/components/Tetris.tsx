@@ -8,16 +8,16 @@ import StartButton from "./StartButton";
 import { usePlayer } from "../hooks/usePlayer";
 import { useStage } from "../hooks/useStage";
 import { useInterval } from "../hooks/useInterval";
-import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
+import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris.js";
 import { useGameStatus } from "../hooks/useGameStatus";
 
 /**
  * Main component that renders the
  * complete scenario
- * @returns 
+ * @returns
  */
 function Tetris() {
-  const [dropTime, setDropTime] = useState<number | null>(null);
+  const [dropTime, setDropTime] = useState<null | number>(null);
   const [gameOver, setGameOver] = useState<boolean>(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
@@ -95,9 +95,15 @@ function Tetris() {
     drop();
   }, dropTime);
 
+  /* useEffect(() => {
+    document.addEventListener('keydown', (e: KeyboardEvent) => console.log(e))
+}, []) */
+
   return (
     <StyledTetrisWrapper
       role="button"
+      // @ts-ignore
+      tabIndex="0"
       onKeyDown={(e: { keyCode: number }) => move(e)}
       onKeyUp={(e: { keyCode: number }) => keyUp(e)}
     >

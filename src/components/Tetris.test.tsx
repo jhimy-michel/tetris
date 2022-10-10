@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Tetris from "./components/Tetris";
+import Tetris from "./Tetris";
 
 describe("Testing Tetrix main component", () => {
   it("should match snapshot", () => {

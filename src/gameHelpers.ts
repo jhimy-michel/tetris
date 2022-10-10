@@ -17,10 +17,7 @@ export const createStage = () => Array.from(Array(STAGE_HEIGHT), () => new Array
  * @returns
  */
 export const checkCollision = (player: PlayerType, stage: any[][], { x: moveX, y: moveY }: any) => {
-  console.log("player: ", player);
-  console.log("stage: ", JSON.stringify(stage));
-  console.log("movex: ", moveX);
-  console.log("moveY: ", moveY);
+
   // Using for loops to be able to return (and break).
   for (let y = 0; y < player.tetramino.length; y += 1) {
     for (let x = 0; x < player.tetramino[y].length; x += 1) {

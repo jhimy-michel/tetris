@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 /**
  * This function was created by Dan Abramov
  * https://overreacted.io/making-setinterval-declarative-with-react-hooks/
  */
 
-export function useInterval(callback, delay) {
-  const savedCallback = useRef();
+export function useInterval(callback: () => any, delay: number | null) {
+  const savedCallback = useRef<any>();
   // Remember the latest callback.
   useEffect(() => {
     savedCallback.current = callback;
