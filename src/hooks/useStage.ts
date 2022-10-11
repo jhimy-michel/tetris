@@ -24,10 +24,10 @@ export const useStage = (
         return acc;
       }, []);
 
-    const updateStage = (prevStage: any[]) => {
+    const updateStage = (prevStage: [number, string][][]) => {
       // first flush the stages
-      const newStage = prevStage.map((row) => row.map((cell: string[]) => (cell[1] === "clear" ? [0, "clear"] : cell)));
-      
+      const newStage = prevStage.map((row) => row.map((cell: [number, string]) => (cell[1] === "clear" ? [0, "clear"] : cell)));
+
       // draw the tetromino
       player.tetramino.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -42,7 +42,7 @@ export const useStage = (
         resetPlayer();
         return sweepRows(newStage);
       }
-      
+
       return newStage;
     };
 
