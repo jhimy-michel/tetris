@@ -95,10 +95,6 @@ function Tetris() {
     drop();
   }, dropTime);
 
-  /* useEffect(() => {
-    document.addEventListener('keydown', (e: KeyboardEvent) => console.log(e))
-}, []) */
-
   return (
     <StyledTetrisWrapper
       role="button"
