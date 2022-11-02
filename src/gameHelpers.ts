@@ -16,7 +16,7 @@ export const createStage = () => Array.from(Array(STAGE_HEIGHT), () => new Array
  * @param param2
  * @returns
  */
-export const checkCollision = (player: PlayerType, stage: [number, string][][], { x: moveX, y: moveY }: any) => {
+export const checkCollision = (player: PlayerType, stage: [number|string, string][][], { x: moveX, y: moveY }: { x: number, y: number }) => {
 
   // Using for loops to be able to return (and break).
   for (let y = 0; y < player.tetramino.length; y += 1) {
